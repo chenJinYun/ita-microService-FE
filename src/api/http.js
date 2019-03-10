@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const instance = axios.create();
-axios.defaults.timeout = 600 * 1000;
-axios.defaults.baseURL = '/api/'
+instance.defaults.timeout = 600 * 1000;
+instance.defaults.baseURL = '/api/';
 // request拦截器
 instance.interceptors.request.use(
   config => {
@@ -21,12 +21,6 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   response => {
     return response;
-    // if(response.data.errCode ==2){
-    //   router.push({
-    //     path:"/login",
-    //     querry:{redirect:router.currentRoute.fullPath}//从哪个页面跳转
-    //   })
-    // }
   },
   error => {
     return Promise.reject(error)
