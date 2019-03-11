@@ -64,7 +64,7 @@
         this.UserArticleForm = Object.assign({}, row, {index: index, type: 'update'});
       },
       handleDelete(index, row) {
-        deleteUserArticleInfo(row).then(resp =>{
+        deleteUserArticleInfo(row.id).then(resp =>{
           this.findAllUserArticle()
         })
       },
