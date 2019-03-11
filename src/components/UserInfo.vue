@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-button type="success" round @click="requireData">新用户</el-button>
+    <el-button type="success" @click="requireData" class="btn">添加新用户</el-button>
     <div>
       <el-table :data="userInfoData" stripe style="width: 100%">
         <el-table-column prop="dateStr" label="创建日期" width="180"></el-table-column>
@@ -86,7 +86,7 @@
       requireData() {
         this.dialogFormVisible = true;
         this.showId = true;
-        this.userform={brand_right:0}; //清空表单
+        this.userform = {brand_right: 0}; //清空表单
         this.userform.type = 'create';
       },
       confirmupdate() {
@@ -117,5 +117,7 @@
 </script>
 
 <style scoped>
-
+  .btn {
+    margin: 10px;
+  }
 </style>

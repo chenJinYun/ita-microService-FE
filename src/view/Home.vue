@@ -1,16 +1,10 @@
 <template>
-  <HelloWorld></HelloWorld>
+  <Home></Home>
 </template>
 <script>
-import {test} from "@/api/api.js"
-import HelloWorld from "@/components/HelloWorld.vue"
+import Home from "@/components/Home.vue"
 export default {
-  components:{HelloWorld},
-  created(){
-    test("8a80cb816955fdb50169560317020002").then(res=> {
-      console.log(res)
-    })
-  }
+  components:{Home},
 }
 </script>
 <style scoped>
