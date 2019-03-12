@@ -1,10 +1,10 @@
 <template>
-  <Home></Home>
+  <Homes></Homes>
 </template>
 <script>
-import Home from "@/components/Home.vue"
+import Homes from "@/components/Homes.vue"
 export default {
-  components:{Home},
+  components:{Homes},
 }
 </script>
 <style scoped>
