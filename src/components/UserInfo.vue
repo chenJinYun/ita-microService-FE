@@ -69,7 +69,7 @@
     },
     created: function () {
       getUserInfo().then(resp => {
-        this.userInfoData = resp;
+        this.userInfoData = resp.data;
       })
     },
     methods: {
@@ -101,14 +101,14 @@
           updateUserInfo(data).then(resp => {
             if (resp != null) {
               this.dialogFormVisible = false;
-              this.userInfoData.splice(this.userform.index, 1, resp)
+              this.userInfoData.splice(this.userform.index, 1, resp.data)
             }
           })
         } else {
           addUserInfo(data).then(resp => {
             this.dialogFormVisible = false;
             this.showId = false;
-            this.userInfoData.push(resp);
+            this.userInfoData.push(resp.data);
           })
         }
       }
