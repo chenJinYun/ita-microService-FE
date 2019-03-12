@@ -55,7 +55,7 @@
     methods: {
       findAllUserArticle() {
         getUserArticleInfo().then(resp => {
-          this.UserArticleData = resp;
+          this.UserArticleData = resp.data;
         })
       },
       handleEdit(index, row) {
@@ -82,7 +82,7 @@
         };
         if (this.UserArticleForm.type === 'update') {
           updateUserArticleInfo(data).then(resp => {
-            if (resp != null) {
+            if (resp.data != null) {
               this.dialogFormVisible = false;
               this.findAllUserArticle()
             }
