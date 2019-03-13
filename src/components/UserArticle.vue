@@ -4,7 +4,7 @@
     <div>
       <el-table :data="UserArticleData" stripe>
         <el-table-column prop="id" label="id" v-if="false"></el-table-column>
-        <el-table-column prop="cardId" label="身份证"></el-table-column>
+        <el-table-column prop="cardId" label="标题"></el-table-column>
         <el-table-column prop="article" label="文章内容"></el-table-column>
         <el-table-column label="操作">
           <template slot-scope="scope">
@@ -16,11 +16,11 @@
     </div>
     <el-dialog title="文章信息" :visible.sync="dialogFormVisible" :center="true">
       <el-form :model="UserArticleForm">
-        <el-form-item label="身份证" :label-width="formLabelWidth">
+        <el-form-item label="标题" :label-width="formLabelWidth">
           <el-input v-model="UserArticleForm.cardId" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="文章内容" :label-width="formLabelWidth">
-          <el-input v-model="UserArticleForm.article" autocomplete="off"></el-input>
+          <el-input type="textarea" v-model="UserArticleForm.article" autocomplete="off"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
