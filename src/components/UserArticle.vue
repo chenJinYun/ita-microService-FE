@@ -3,7 +3,7 @@
     <el-button type="success" @click="requireData" class="btn">添加新文章</el-button>
     <div>
       <el-table :data="UserArticleData" stripe>
-        <el-table-column prop="id" label="身份证" v-if="false"></el-table-column>
+        <el-table-column prop="id" label="id" v-if="false"></el-table-column>
         <el-table-column prop="cardId" label="身份证"></el-table-column>
         <el-table-column prop="article" label="文章内容"></el-table-column>
         <el-table-column label="操作">
@@ -65,7 +65,7 @@
       },
       handleDelete(index, row) {
         deleteUserArticleInfo(row.id).then(resp =>{
-          this.findAllUserArticle()
+          this.UserArticleData.splice(index, 1)
         })
       },
       requireData() {
@@ -84,14 +84,14 @@
           updateUserArticleInfo(data).then(resp => {
             if (resp.data != null) {
               this.dialogFormVisible = false;
-              this.findAllUserArticle()
+              this.UserArticleData.splice(this.UserArticleForm.index, 1, resp.data)
             }
           })
         } else {
           addUserArticleInfo(data).then(resp => {
             this.dialogFormVisible = false;
             this.showId = false;
-            this.findAllUserArticle()
+            this.UserArticleData.push(resp.data);
           })
         }
       }
