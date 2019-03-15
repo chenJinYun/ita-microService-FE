@@ -1,8 +1,10 @@
 import axios from 'axios'
 
-const instance = axios.create();
+const instance = axios.create({
+  headers: {'content-type': 'application/json;charset=UTF-8'}
+});
 instance.defaults.timeout = 600 * 1000;
-instance.defaults.baseURL = '/api/';
+instance.defaults.baseURL = '/api/v1';
 // request拦截器
 instance.interceptors.request.use(
   config => {
