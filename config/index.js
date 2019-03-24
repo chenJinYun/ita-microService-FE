@@ -3,7 +3,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-const target = 'http://localhost:8081'
+const target = 'http://localhost:8102/consumer-main'
 
 module.exports = {
   dev: {
